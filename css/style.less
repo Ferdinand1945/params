@@ -6,14 +6,20 @@ th:first-child, td:first-child {
     background-color: #404040 ;
     color: #fff;
 }
-  .column, .columns {
+.column, .columns {
     margin-left: 1%;
 }
-.container {
-	max-width: 1080px;
-  width: 86%;
-}
 
+}
+  .container {
+    max-width: 1080px;
+    width: 86%;
+  }
+
+  .red {
+    color: red;
+    font-size: 1.4em;
+  }
   h1, h2, h3, h4 { 
     color: #642887;
   }
@@ -24,20 +30,20 @@ th:first-child, td:first-child {
     width: 100%;
   }
 
-.inline {
-  display: inline-block;
-}
+  .inline {
+    display: inline-block;
+  }
 
   .l {
-  border: 1px solid #000;
+    border: 1px solid #000;
     margin: 4px;
     padding: 7px;
     font-size: 10.7px;
     border-radius: 3px;
   }
-.right {
-	float: right;
-}
+  .right {
+    float: right;
+  }
   tr {
     border: 1px solid #000;
     padding: 7px;
@@ -62,3 +68,9 @@ th:first-child, td:first-child {
   .no-margin {
    margin-bottom: 0rem;
   }
+
+/**********media querys**********/
+@media screen and (min-width: 700px) {
+.four.columns {
+    width: 31.999%;
+}
