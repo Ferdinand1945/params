@@ -1,82 +1,106 @@
-  body {
-    font-size: 1.2em;
-  } 
-  th:first-child, td:first-child {
-      padding-left: 0px;
-      background-color: #404040 ;
-      color: #fff;
-  }
-  .column, .columns {
-      margin-left: 1%;
-  }
-  .container {
-    max-width: 1080px;
-    width: 86%;
-  }
-  .black {
-    background-color: #404040;
-    color: #fff;
-    font-size: 14px;
-    
-    text-align: center;
-  }
-  .purple {
-    background-color: #652D86;
-    color: #fff;
-    text-align: center;
-    font-size: 1.4em;
-  }
-  .red {
-    color: red;
-    font-size: 1.4em;
-  }
-  h1, h2, h3, h4 { 
-    color: #642887;
-  }
-  .h5 {
-    font-size: 1.1rem;
-  }
-  table {
-    width: 100%;
-  }
-  .inline {
-    display: inline-block;
-  }
-  .l {
-    border: 1px solid #000;
-    margin: 4px;
-    padding: 7px;
-    font-size: 11px;
-    border-radius: 3px;
-  }
-  .right {
-    float: right;
-  }
-  tr {
-    border: 1px solid #000;
-    padding: 7px;
-  }
-  tr td {
-    display: block;
-    padding: 5px;
-  }
-  .pull-up {
-    margin: 10px;
-  }
-  .positive {
-    background-color: #00B48C;
-    color: #fff;    
-  }
-  .mas-chico {
-    font-size: 21px;
-  }
-  .no-margin {
-   margin-bottom: 0rem;
-  }
+body {
+  font-size: 1.2em;
+}
+      dl {
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+      }
+      dt {
+        float: left;
+        width: 42%;
+        background: #eee;
+        padding: 0;
+        margin: 0;
+      }
+      dd {
+        float: left;
+        width: 58%;
+        padding: 0;
+        margin: 0;
+        text-align: right;
+      }
 
-  /**********media querys**********/
-  @media screen and (min-width: 700px) {
+      h1, h2, h3, h4 { 
+        color: #642887;
+      }
+
+      hr {
+        margin-top: 1rem;
+      }
+/****** classes ******/
+.black {
+  background-color: #0D0D0D;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+.block {
+   display: block;
+  border: 1px solid #000;
+  margin: 4px;
+  padding: 7px;
+  font-size: 11px;
+  border-radius: 3px;
+  min-height: 247px;
+}
+.border {
+  border: 1px solid #000;
+}
+.column, .columns {
+  margin-left: 1%;
+}
+.container {
+  max-width: 1080px;
+  width: 86%;
+}
+.font-m {
+  font-size: 21px;
+}
+.full-size {
+  width: 100%;
+}
+.h5 {
+  font-size: 1.3rem;
+}
+
+.inline {
+  display: inline-block;
+}
+.inline td{
+  display: inline-block;
+}
+.no-margin {
+  margin-bottom: 0rem;
+}
+.red {
+  color: red;
+  font-size: 1.4em;
+}
+table {
+    margin-bottom: 0em;
+  width: 100%;
+}
+.left {
+  text-align: left;
+  padding-left: 4px;
+}
+.right {
+  float: right;
+}
+tr td {
+  display: block;
+  padding: 1px !important;
+  border-bottom: 1px solid #eee;
+  border-collapse: collapse;
+}
+.pull-up {
+  margin: 10px;
+}
+/**********media querys**********/
+@media screen and (min-width: 700px) {
   .four.columns {
-      width: 31.999%;
+    width: 31.999%;
   }
-  }
+}
