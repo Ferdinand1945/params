@@ -3,9 +3,10 @@
 @white: #fff;
 @grey: #eee;
 @purple: #642887;
+@close: #00B48C;
 /******* Size ********/
-@base-size: 1em;
 @size-xs:0.772em;
+@base-size: 1em;
 @size-s: 1.4em;
 @size-m: 1.8em;
 @size-l: 2.2em;
@@ -31,26 +32,16 @@ dd {
     margin: 0;
     text-align: right;
 }
-
 h1, h2, h3, h4 { 
     color: @purple;
 }
-h1 {
-    font-size: @size-l;
-}
-h2 {
-    font-size: @size-m;
-}
-h3 {
-    font-size: @size-s;
-}
-h5 {
-    font-size: @base-size;
-}
+h1 { font-size: @size-l; }
+h2 { font-size: @size-m; }
+h3 { font-size: @size-s; }
+h5 { font-size: @base-size; }
+hr { margin-top: @base-size; }
 
-hr {
-    margin-top: @base-size;
-}
+input[type="button"] { background-color: @close; }
 /****** classes ******/
 .black {
     background-color: @black;
@@ -110,7 +101,6 @@ table {
     margin-bottom: 0em;
     width: 100%;
 }
-
 tr td {
     display: block;
     padding: 1px !important;
@@ -118,7 +108,6 @@ tr td {
     border-collapse: collapse;
     font-size: @size-xs;
 }
-
 /**********media querys**********/
 @media screen and (min-width: 700px) {
     .four.columns {
