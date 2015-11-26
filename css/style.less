@@ -1,23 +1,40 @@
 /******* Colors *********/
-@black:  #0D0D0D;
+@black: #0D0D0D;
 @white: #fff;
 @grey: #eee;
 @purple: #642887;
 @close: #00B48C;
 /******* Size ********/
-@size-xs:0.772em;
+@size-xs: 0.772em;
 @base-size: 1em;
 @size-s: 1.4em;
 @size-m: 1.8em;
 @size-l: 2.2em;
+/******* Numbers on tables *******/
+@iterations: 15;
 
-body { }
+.mixin-loop (@i) when (@i > 0) {
+  tr:nth-child(@{i}):after {
+    content: "@{i}";
+    float: left;
+      padding:0 10px;;
+      width: 10px;
+      background: @black;
+      color: @white;
+  }
+  .mixin-loop(@i - 1);
+}
+.mixin-loop(@iterations);
+
+
+
 dl {
     width: 100%;
     overflow: hidden;
     padding: 0;
     margin: 0;
 }
+
 dt {
     float: left;
     width: 45%;
@@ -25,6 +42,7 @@ dt {
     padding: 0;
     margin: 0;
 }
+
 dd {
     float: left;
     width: 55%;
@@ -32,16 +50,20 @@ dd {
     margin: 0;
     text-align: right;
 }
-h1, h2, h3, h4 { 
-    color: @purple;
-}
+
+h1, h2, h3, h4 { color: @purple; }
+
 h1 { font-size: @size-l; }
+
 h2 { font-size: @size-m; }
+
 h3 { font-size: @size-s; }
+
 h5 { font-size: @base-size; }
+
 hr { margin-top: @base-size; }
 
-input[type="button"] { 
+input[type="button"] {
     background-color: @close;
     color: @white;
 }
@@ -53,6 +75,7 @@ input[type="button"] {
     font-size: 14px;
     text-align: center;
 }
+
 .block {
     display: block;
     border: 1px solid @black;
@@ -61,50 +84,48 @@ input[type="button"] {
     font-size: 11px;
     border-radius: 3px;
     min-height: 247px;
+    min-width: 380px;
 }
-.border {
-    border: 1px solid @black;
-}
-.column, .columns {
-    margin-left: 1%;
-}
+
+.border { border: 1px solid @black; }
+
+.column, .columns { margin-left: 1%; }
+
 .container {
-    max-width: 1080px;
-    width: 86%;
-}
-.font-m {
-    font-size: 1.6em;
-}
-.full-size {
+    max-width: 100%;
     width: 100%;
 }
-.inline {
-    display: inline-block;
-}
-.inline td{
-    display: inline-block;
-}
+
+.font-m { font-size: 1.6em; }
+.grey { background: @grey;}
+
+.full-size { width: 100%; }
+
+.inline { display: inline-block; }
+
+.inline td { display: inline-block; }
+
 .left {
     text-align: left;
     padding-left: 4px;
 }
-.no-margin {
-    margin-bottom: 0rem;
-}
-.pull-up {
-    margin: 10px;
-}
+
+.no-margin { margin-bottom: 0rem; }
+
+.pull-up { margin: 10px; }
+
 .red {
     color: red;
     font-size: @base-size;
 }
-.right {
-    float: right;
-}
+
+.right { float: right; }
+
 table {
     margin-bottom: 0em;
     width: 100%;
 }
+
 tr td {
     display: block;
     padding: 1px !important;
@@ -112,9 +133,8 @@ tr td {
     border-collapse: collapse;
     font-size: @size-xs;
 }
+
 /********** media querys **********/
-@media screen and (min-width: 700px) {
-    .four.columns {
-        width: 31.999%;
-    }
+@media screen and (min-width: 1210px) {
+    .four.columns { width: 31.999%; }
 }

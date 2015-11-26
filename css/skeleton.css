@@ -48,8 +48,10 @@
     padding: 0; }
 }
 
+
+
 /* For devices larger than 550px */
-@media (min-width: 550px) {
+@media (min-width: 1210px) {
   .container {
     width: 80%; }
   .column,
@@ -63,7 +65,7 @@
   .one.columns                    { width: 4.66666666667%; }
   .two.columns                    { width: 13.3333333333%; }
   .three.columns                  { width: 22%;            }
-  .four.columns                   { width: 30.6666666667%; }
+  .four.columns                   { width: 100%; }
   .five.columns                   { width: 39.3333333333%; }
   .six.columns                    { width: 48%;            }
   .seven.columns                  { width: 56.6666666667%; }
@@ -409,10 +411,14 @@ there.
 @media (min-width: 550px) {}
 
 /* Larger than tablet */
-@media (min-width: 750px) {}
+@media (min-width: 750px) {
+   .four.columns { width: 100%; }
+}
 
 /* Larger than desktop */
 @media (min-width: 1000px) {}
 
 /* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+@media (max-width: 1213px) {
+
+}
