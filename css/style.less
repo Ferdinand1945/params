@@ -10,25 +10,23 @@
 @size-s: 1.4em;
 @size-m: 1.8em;
 @size-l: 2.2em;
-/******* Numbers on tables *******/
-@iterations: 15;
+/******* loop Numbers on tables *******/
+    @iterations: 20;
 
-.mixin-loop (@i) when (@i > 0) {
-  tr:nth-child(@{i}):after {
-    content: "@{i}";
-    float: left;
-      padding:0 7px;
-      margin-right: 7px;
-      width: 10px;
-      background: @black;
-      color: @white;
-  }
-  .mixin-loop(@i - 1);
-}
-.mixin-loop(@iterations);
-
-
-
+    .mixin-loop (@i) when (@i > 0) {
+      tr:nth-child(@{i}):after {
+        content: "@{i}";
+        float: left;
+          padding:0 7px;
+          margin-right: 7px;
+          width: 10px;
+          background: @black;
+          color: @white;
+      }
+      .mixin-loop(@i - 1);
+    }
+    .mixin-loop(@iterations);
+/********** finish loop *************/
 dl {
     width: 100%;
     overflow: hidden;
@@ -68,7 +66,12 @@ input[type="button"] {
     background-color: @close;
     color: @white;
 }
-
+/********** ID *************/
+#hardware {
+    border: 1px solid rgb(0, 0, 0);
+    text-align: center;
+    font-size: 21px;
+}
 /****** classes ******/
 .black {
     background-color: @black;
