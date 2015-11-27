@@ -11,29 +11,58 @@
 @size-m: 1.8em;
 @size-l: 2.2em;
 /******* loop Numbers on tables *******/
-    @iterations: 20;
-
-    .mixin-loop (@i) when (@i > 0) {
-      tr:nth-child(@{i}):after {
+@iterations: 20;
+.mixin-loop (@i) when (@i > 0) {
+    tr:nth-child(@{i}):after {
         content: "@{i}";
         float: left;
-          padding:0 7px;
-          margin-right: 7px;
-          width: 10px;
-          background: @black;
-          color: @white;
-      }
-      .mixin-loop(@i - 1);
+        padding:0 7px;
+        margin-right: 7px;
+        width: 10px;
+        background: @grey;
+        color: @black;
     }
-    .mixin-loop(@iterations);
-/********** finish loop *************/
+    .mixin-loop(@i - 1);
+}
+.mixin-loop(@iterations);
+/*********** finish loop *************/
+
+/*********** Elements ****************/
+html {
+  font-size: 62.5%; 
+}
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; 
+}
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  background-color: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+ }
+input[type="button"]:hover,
+input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0; }
 dl {
     width: 100%;
     overflow: hidden;
     padding: 0;
     margin: 0;
 }
-
 dt {
     float: left;
     width: 45%;
@@ -41,7 +70,6 @@ dt {
     padding: 0;
     margin: 0;
 }
-
 dd {
     float: left;
     width: 55%;
@@ -49,19 +77,27 @@ dd {
     margin: 0;
     text-align: right;
 }
-
-h1, h2, h3, h4 { color: @purple; }
-
+h1, h2, h3, h4, h5 { 
+    margin-top: 0em;
+    margin-bottom: 0em;
+    font-weight: 300;
+    color: @purple; 
+}
 h1 { font-size: @size-l; }
-
 h2 { font-size: @size-m; }
-
 h3 { font-size: @size-s; }
-
-h5 { font-size: @base-size; }
-
+h5 { font-size: @base-size; color: @white; }
 hr { margin-top: @base-size; }
-
+i {
+    padding: 0 2px;
+    font-size: 11px;
+}
+i:first-child {
+    margin-left: 31px;
+}
+i:last-child {
+    float: right;
+}
 input[type="button"] {
     background-color: @close;
     color: @white;
@@ -79,7 +115,6 @@ input[type="button"] {
     font-size: 14px;
     text-align: center;
 }
-
 .block {
     display: block;
     border: 1px solid @black;
@@ -92,44 +127,42 @@ input[type="button"] {
 }
 
 .border { border: 1px solid @black; }
-
-.column, .columns { margin-left: 1%; }
-
 .container {
-    max-width: 100%;
-    width: 100%;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+.first {
+    width: 30px;
 }
-
 .font-m { font-size: 1.6em; }
 .grey { background: @grey;}
-
 .full-size { width: 100%; }
 
 .inline { display: inline-block; }
-
 .inline td { display: inline-block; }
-
 .left {
     text-align: left;
     padding-left: 4px;
 }
-
 .no-margin { margin-bottom: 0rem; }
-
 .pull-up { margin: 10px; }
-
 .red {
     color: red;
     font-size: @base-size;
 }
-
 .right { float: right; }
-
 table {
     margin-bottom: 0em;
     width: 100%;
 }
-
 tr td {
     display: block;
     padding: 1px !important;
@@ -137,8 +170,19 @@ tr td {
     border-collapse: collapse;
     font-size: @size-xs;
 }
-
 /********** media querys **********/
 @media screen and (min-width: 1210px) {
     .four.columns { width: 31.999%; }
+}
+@media (min-width: 1210px) {
+  .container {
+    width: 100%; }
+  .column,
+  .columns {
+    margin-left: 1%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+  .six.columns { width: 48%; }
+  .eight.columns { width: 65.3333333333%; }
 }
